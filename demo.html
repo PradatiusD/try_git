@@ -7,17 +7,22 @@
         <script>
             window.onload = function () {
                 var paper = Raphael("canvas", 640, 480);
-                // Creates circle at x = 50, y = 40, with radius 10
-                var circle = paper.circle(100, 100, 100);
-                // Sets the fill attribute of the circle to red (#f00)
-                circle.attr("fill", "#8690CF");
+                // Creates circles with paper.circle(x-position, y-position, radius)
+                var outercircle = paper.circle(320, 240, 100);
+                var innercircle = paper.circle(320, 240, 80);
 
-                // Sets the stroke attribute of the circle to white
-                circle.attr("stroke", "#525252");
+                // Sets the fill attribute of the circles using jQuery
+                outercircle.attr("fill", "#8690CF");
+                innercircle.attr("fill", "white");
+
+                // Sets the stroke attribute of the circles using jQuery
+                outercircle.attr("stroke", "#525252");
+                innercircle.attr("stroke", "#525252");
             };
         </script>
     </head>
     <body>
         <div id="canvas"></div>
+
     </body>
 </html>

@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Raphaël · Playground</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="raphael.js"></script>
         <script>
         //Thanks to this stackoverflow post http://stackoverflow.com/questions/5061318/drawing-centered-arcs-in-raphael-js
-            window.onload = function () {
+            function fillup (totalTime) {
                 amount = 100;
                 var archtype = Raphael("canvas", 200, 100);
                 archtype.customAttributes.arc = function (xloc, yloc, value, total, R) {
@@ -40,9 +41,12 @@
 
                 my_arc.animate({
                     arc: [50, 50, amount, 100, 30]
-                }, 1500, "bounce");
+                }, totalTime);
 
             };
+            jQuery(document).ready(function(){
+                fillup(25000);
+            })
         </script>
     </head>
     <body>
